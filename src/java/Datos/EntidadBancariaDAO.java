@@ -24,7 +24,7 @@ public class EntidadBancariaDAO {
         Connection conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");
 
 
-        String selectSQL = "SELECT * FROM entidadbancaria WHERE idEntidad = ?";
+        String selectSQL = "SELECT * FROM entidadbancaria WHERE idEntidadBancaria = ?";
         PreparedStatement preparedStatement = conexion.prepareStatement(selectSQL); 
         preparedStatement.setInt(1, idEntidadBancaria);
         ResultSet rs = preparedStatement.executeQuery();
@@ -50,7 +50,7 @@ public class EntidadBancariaDAO {
         }
 
         conexion.close();
-        System.out.println("Conexion creada con exito y datos mostrados.");
+        System.out.println("Conexion creada  y datos mostrados.");
         return entidadBancaria;
 
     }
@@ -60,7 +60,7 @@ public class EntidadBancariaDAO {
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");
 
-        String insertTableSQL = "INSERT INTO entidadbancaria" + "(idEntidad, codigoEntidad, nombre, cif, tipoEntidadBancaria) VALUES"
+        String insertTableSQL = "INSERT INTO entidadbancaria" + "(idEntidadBancaria, codigoEntidad, nombre, cif, tipoEntidadBancaria) VALUES"
                 + "(?,?,?,?,?)";
 
         PreparedStatement preparedStatement2 = connection.prepareStatement(insertTableSQL);
@@ -82,7 +82,7 @@ public class EntidadBancariaDAO {
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");
 
 
-        String updateTableSQL = "UPDATE entidadbancaria SET nombre = ? WHERE identidad = ?";
+        String updateTableSQL = "UPDATE entidadbancaria SET nombre = ? WHERE identidadBancaria = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(updateTableSQL);
         preparedStatement.setString(1, "Santander");
         preparedStatement.setInt(2, entidadBancaria.getIdEntidad());
@@ -97,7 +97,7 @@ public class EntidadBancariaDAO {
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");
 
-        String deleteSQL = "DELETE FROM entidadbancaria WHERE idEntidad = ?";
+        String deleteSQL = "DELETE FROM entidadbancaria WHERE idEntidadBancaria = ?";
         PreparedStatement preparedStatement3 = connection.prepareStatement(deleteSQL);
         preparedStatement3.setInt(1, entidadBancaria);
         preparedStatement3.executeUpdate();
@@ -120,7 +120,7 @@ public class EntidadBancariaDAO {
         ResultSet rs = preparedStatement.executeQuery();
 
         while (rs.next()) {
-            int idEntidadBancaria = rs.getInt("idEntidad");
+            int idEntidadBancaria = rs.getInt("idEntidadBancaria");
             String codigoEntidad = rs.getString("codigoEntidad");
             String nombre = rs.getString("nombre");
             String cif = rs.getString("cif");
@@ -130,7 +130,7 @@ public class EntidadBancariaDAO {
             listaEntidades.add(entidadBancaria);
 
 
-            System.out.println("Conexion creada con exito y lista guardada.");
+            System.out.println("Conexion creada y lista guardada.");
         }
         connection.close();
         return listaEntidades;
@@ -144,13 +144,13 @@ public class EntidadBancariaDAO {
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");
 
-        String selectSQL = "SELECT * FROM entidadbancaria WHERE codigo = ? ";
+        String selectSQL = "SELECT * FROM entidadbancaria WHERE codigoEntidad = ? ";
         PreparedStatement preparedStatement = connection.prepareStatement(selectSQL);
         preparedStatement.setString(1, codigo); 
         ResultSet rs = preparedStatement.executeQuery();
 
         while (rs.next()) {
-            int idEntidadBancaria = rs.getInt("idEntidad");
+            int idEntidadBancaria = rs.getInt("idEntidadBancaria");
             String codigoEntidad = rs.getString("codigoEntidad");
             String nombre = rs.getString("nombre");
             String cif = rs.getString("cif");

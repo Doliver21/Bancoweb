@@ -24,13 +24,13 @@ public class ConnectionFactoryJDBCImp {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConnectionFactoryJDBCImp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Connection conexion = null;
+        Connection connection = null;
         try {
-            conexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");  //Conexion
+            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");  //Conexion
         } catch (SQLException ex) {
             Logger.getLogger(ConnectionFactoryJDBCImp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return conexion;
+        return connection;
     }
 }
 
