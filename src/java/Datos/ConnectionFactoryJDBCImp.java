@@ -20,13 +20,13 @@ public class ConnectionFactoryJDBCImp {
     public Connection getConnection() {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");  //Carga el driver
+            Class.forName("com.mysql.jdbc.Driver"); 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConnectionFactoryJDBCImp.class.getName()).log(Level.SEVERE, null, ex);
         }
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");  //Conexion
+            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/banco", "root", "root");  
         } catch (SQLException ex) {
             Logger.getLogger(ConnectionFactoryJDBCImp.class.getName()).log(Level.SEVERE, null, ex);
         }
