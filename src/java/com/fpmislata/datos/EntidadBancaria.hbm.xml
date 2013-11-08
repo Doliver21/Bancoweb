@@ -5,7 +5,7 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <hibernate-mapping>
-    <class name="com.fpmislata.datos.negocio.EntidadBancaria" table="EntidadBancaria" >
+    <class name="com.fpmislata.negocio.EntidadBancaria" table="EntidadBancaria" >
         <id column="idEntidadBancaria" name="idEntidadBancaria" type="integer"/>
         <property name="codigoEntidadBancaria" />
         <property name="nombre" />
