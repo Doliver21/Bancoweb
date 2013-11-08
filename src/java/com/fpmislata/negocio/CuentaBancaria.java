@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Negocio;
+package com.fpmislata.negocio;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

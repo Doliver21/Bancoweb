@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Datos;
+package com.fpmislata.datos;
 import java.sql.Connection;
 import javax.naming.Context;
 import javax.naming.InitialContext;

@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Negocio;
+package com.fpmislata.negocio;
 
-import Negocio.EntidadBancaria;
-import Negocio.CuentaBancaria;
+import com.fpmislata.negocio.EntidadBancaria;
+import com.fpmislata.negocio.CuentaBancaria;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

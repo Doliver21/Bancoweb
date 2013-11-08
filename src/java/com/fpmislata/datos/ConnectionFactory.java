@@ -2,14 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Negocio;
+package com.fpmislata.datos;
 
 /**
  *
  * @author alumno
  */
-public enum TipoMovimientoBancario {
-  DEBE,
-  HABER,
+
+import java.sql.Connection;
+
+public interface ConnectionFactory {
+    
+ Connection getConnection();
     
 }

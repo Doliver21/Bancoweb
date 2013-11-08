@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Datos;
+package com.fpmislata.datos;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import java.util.List;
  */
 public interface GenericDAO<T,ID> {
     T read(ID id);
-    void insert(Object e);
-    void update(Object e);
-    T delete(ID id);
+    void insert(T e);
+    void update(T e);
+    void delete(ID id);
     List<T> findAll();   
 }

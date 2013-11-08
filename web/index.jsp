@@ -1,27 +1,72 @@
-<%-- 
-    Document   : index
-    Created on : 10-oct-2013, 8:53:50
-    Author     : alumno
---%>
+<%@page import="com.fpmislata.datos.EntidadBancariaDAOImpJDBC"%>
+<%@page import="java.util.List"%>
+<%@page import="com.fpmislata.negocio.EntidadBancaria"%>
+<%@page import="com.fpmislata.datos.EntidadBancariaDAO"%>
 
-<%@page import="banco.EntidadBancaria"%>
-<%@page import="banco.EntidadBancariaDAO"%>
-<%@page import="java.util.Date"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-     Date hoy = new Date();
-     EntidadBancariaDAO entidadbancariaDAO = new EntidadBancariaDAO();
-     EntidadBancaria entidadBancaria = entidadbancariaDAO.read(1);
-     %>
-<!DOCTYPE html>
+       
+EntidadBancariaDAOImpJDBC entidadBancariaDAOImpJDBC = new EntidadBancariaDAOImpJDBC(); //impJDBC
+
+//EntidadBancaria entidadBancaria =  entidadBancariaDAO.read(1);
+
+List<EntidadBancaria> entidadesBancarias = entidadBancariaDAOImpJDBC.findAll();
+
+
+String nombre=request.getParameter("nombre");
+
+
+List<EntidadBancaria> entidadesBancariasNombre = entidadBancariaDAOImpJDBC.findByNombre(nombre);
+
+%>
+
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Fecha</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <%= entidadBancaria%>
+        <div align="center"> 
+            <p>Tu entidad Bancaria es:</p> 
+                
+            <table border="solid">
+                
+           <% for(EntidadBancaria entidadBancaria:entidadesBancarias){ 
+                %><tr>  <td><% out.print(entidadBancaria.getIdEntidad());%></td>
+                    <td><%  out.print(entidadBancaria.getCodigo());%></td>
+                                    <td><% out.print(entidadBancaria.getCodigoEntidad());%></td>
+                <td><% out.print(entidadBancaria.getNombre()); %></td>
+                <td><% out.print(entidadBancaria.getCif()); %></td>    
+                <td><% out.print(entidadBancaria.getTipoEntidadBancaria());%></td>
+                
+                <td><a href="Borrar.jsp?idEntidadBancaria=<%=entidadBancaria.getIdEntidad()%>">BORRAR</a>
+                 </td>
+                
+                </tr>
+   <% } %>
+   
+            </table>
+          
+        </div>   
+   
+           <div align="center"> 
+            <p>Tu entidad Bancaria por nombre es:</p> 
+                
+            <table border="solid">
+                
+           <% for(EntidadBancaria entidadBancaria:entidadesBancariasNombre){ 
+                %><tr><td><%  out.print(entidadBancaria.getCodigo());%></td>
+                <td><% out.print(entidadBancaria.getCodigoEntidad());%></td>
+                <td><% out.print(entidadBancaria.getNombre()); %></td>
+                <td><% out.print(entidadBancaria.getCif()); %></td>    
+                <td><% out.print(entidadBancaria.getTipoEntidadBancaria());%></td></tr>
+   <% } %>
+   
+            </table>
+          
+        </div>  
+   
+   
+  <% out.print(nombre);%>
+   
     </body>
 </html>
