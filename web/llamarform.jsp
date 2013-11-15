@@ -14,11 +14,11 @@
     </head>
     <body>
          <form id="firm1" action="http://localhost:8084/web1/index.jsp">
-             introduce entidad bancaria:<input type="text" name="nombre">
+             introduce entidad bancaria:<input type="text" name="codigoEntidadBancaria">
 
     </form>
      
-        <h1></h1>
+        
     </body>
        
 </html>
