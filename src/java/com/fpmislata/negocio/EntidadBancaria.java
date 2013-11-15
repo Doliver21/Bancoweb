@@ -15,7 +15,7 @@ import java.util.List;
 public class EntidadBancaria {
 
     private int idEntidadBancaria;
-    private String codigoEntidad;
+    private String codigoEntidadBancaria;
     private String nombre;
     private String cif;
     private TipoEntidadBancaria tipoEntidadBancaria;
@@ -27,17 +27,25 @@ public class EntidadBancaria {
         
     }
     
-    /*public EntidadBancaria(int idEntidad ,String codigoEntidad,String nombre,String cif , TipoEntidadBancaria tipoEntidadBancaria){
+    /*public EntidadBancaria(int idEntidad ,String codigoEntidadBancaria,String nombre,String cif , TipoEntidadBancaria tipoEntidadBancaria){
         
        this.cif=cif;
-       this.codigoEntidad=codigoEntidad;
+       this.codigoEntidadBancaria=codigoEntidadBancaria;
        this.idEntidadBancaria=idEntidad;
        this.nombre=nombre;
        this.tipoEntidadBancaria= tipoEntidadBancaria;
     }*/
 
-    public EntidadBancaria(int idEntidadBancaria, String codigoEntidad, String nombre, String cif, TipoEntidadBancaria valueOf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public EntidadBancaria(int idEntidadBancaria, String codigoEntidadBancaria, String nombre, String cif, TipoEntidadBancaria TipoEntidadBancaria  ){
+        
+       this.cif=cif;
+       this.codigoEntidadBancaria=codigoEntidadBancaria;
+       this.idEntidadBancaria=idEntidadBancaria;
+       this.nombre=nombre;
+       this.tipoEntidadBancaria = TipoEntidadBancaria;
+        
+        
+        
     }
 
     
@@ -51,20 +59,20 @@ public class EntidadBancaria {
     }
     
 
-    public int getIdEntidad() {
+    public int getIdEntidadBancaria() {
         return idEntidadBancaria;
     }
 
-    public void setIdEntidad(int idEntidad) {
-        this.idEntidadBancaria = idEntidad;
+    public void setIdEntidadBancaria(int IdEntidadBancaria) {
+        this.idEntidadBancaria = IdEntidadBancaria;
     }
 
-    public String getCodigoEntidad() {
-        return codigoEntidad;
+    public String getCodigoEntidadBancaria() {
+        return codigoEntidadBancaria;
     }
 
-    public void setCodigoEntidad(String codigoEntidad) {
-        this.codigoEntidad = codigoEntidad;
+    public void setCodigoEntidadBancaria(String codigoEntidadBancaria) {
+        this.codigoEntidadBancaria = codigoEntidadBancaria;
     }
 
     public String getNombre() {

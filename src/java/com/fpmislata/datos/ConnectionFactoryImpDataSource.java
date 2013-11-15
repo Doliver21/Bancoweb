@@ -9,44 +9,27 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class ConnectionFactoryImpDataSource implements ConnectionFactory{
- 
-  
-  @Override
-  public Connection getConnection() {
-   
-   Context initContext = null;
-      try {
-          initContext = new InitialContext();
-      } catch (NamingException ex) {
-          Logger.getLogger(ConnectionFactoryImpDataSource.class.getName()).log(Level.SEVERE, null, ex);
-      }
-   
-      
-   Context envContext = null;
-      try {
-          envContext = (Context)initContext.lookup("java:/comp/env");
-      } catch (NamingException ex) {
-          Logger.getLogger(ConnectionFactoryImpDataSource.class.getName()).log(Level.SEVERE, null, ex);
-      }
-      
-   DataSource datasource = null;
-      try {
-          datasource = (DataSource)envContext.lookup("jdbc/banco");
-      } catch (NamingException ex) {
-          Logger.getLogger(ConnectionFactoryImpDataSource.class.getName()).log(Level.SEVERE, null, ex);
-      }
-   
-      
-   Connection con = null;
-      try {
-          con = datasource.getConnection();
-      } catch (SQLException ex) {
-          Logger.getLogger(ConnectionFactoryImpDataSource.class.getName()).log(Level.SEVERE, null, ex);
-      }
-      
-   return con;
-   
+public class ConnectionFactoryImpDataSource implements ConnectionFactory {
+
+    @Override
+    public Connection getConnection() {
+        try {
+            Context initContext = null;
+            initContext = new InitialContext();
+
+            Context envContext = null;
+            envContext = (Context) initContext.lookup("java:/comp/env");
+
+            DataSource datasource = null;
+            datasource = (DataSource) envContext.lookup("jdbc/banco");
+
+            Connection con = null;
+            con = datasource.getConnection();
+
+
+            return con;
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
-    
 }

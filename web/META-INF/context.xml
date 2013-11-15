@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context antiJARLocking="true" path="/web1">
 <Resource
-    name="jdbc/hibernate1"
+    name="jdbc/banco"
     driverClassName="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://localhost:3306/hibernate1"
-    username="hibernate1"
-    password="hibernate1"
+    url="jdbc:mysql://localhost:3306/banco"
+    username="banco"
+    password="banco"
     maxActive="100"
     maxIdle="30"
     maxWait="10000"

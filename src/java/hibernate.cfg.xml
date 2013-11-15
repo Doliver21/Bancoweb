@@ -12,9 +12,12 @@ and open the template in the editor.
     <property name="connection.password">banco</property>
     <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <property name="hibernate.show_sql">true</property>
-    <mapping resource="com.fpmislata.datos/EntidadBancaria.hbm.xml"/>
-    <mapping resource="com.fpmislata.datos/SucursalBancaria.hibernate.hbm.xml"/>
-    <mapping resource="com.fpmislata.datos/CuentaBancaria.hibernate.hbm.xml"/>
-    <mapping resource="com.fpmislata.datos/MovimientoBancario.hibernate.hbm.xml"/>
-  </session-factory>
+    <mapping resource="com/fpmislata/datos/EntidadBancaria.hbm.xml"/>
+   <!--
+     <mapping resource="com/fpmislata/datos/SucursalBancaria.hbm.xml"/>
+    <mapping resource="com/fpmislata/datos/CuentaBancaria.hbm.xml"/>
+    <mapping resource="com/fpmislata/datos/MovimientoBancario.hbm.xml"/>
+  
+    -->
+    </session-factory>
 </hibernate-configuration>
