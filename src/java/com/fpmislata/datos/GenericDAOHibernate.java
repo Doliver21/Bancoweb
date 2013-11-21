@@ -11,11 +11,11 @@ import org.hibernate.SessionFactory;
 public class GenericDAOHibernate<T, ID extends Serializable> implements GenericDAO<T, ID> {
 
     // """ Inicializamos Hibernate"""
-    private SessionFactory sessionFactory;
+    SessionFactory sessionFactory;
 
     public GenericDAOHibernate(/*SessionFactory sessionFactory*/) {
        this.sessionFactory= HibernateUtil.getSessionFactory();
-    // this.sessionFactory = sessionFactory; ANTIGUO!!!, LE PASABAMOS EL PARAMETRO sessionFactory EN EL METODO
+    // this.sessionFactory = sessionFactory;
     }
 
     @Override
@@ -113,22 +113,9 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements GenericD
         return list;
     }
 
-   /* OJO NO VA AQUI*/
-     public List<T> findByCodigo(String codigo) {
-
-        Session session = sessionFactory.getCurrentSession();
-
-        //List<T> list = new ArrayList();
-
-        Query query = session.createQuery("SELECT entidadbancaria FROM "+getEntityClass().getName()+" WHERE codigo=?");
-        query.setString(0, codigo);
-        List list = query.list();
-        //session.close();
-
-        return list;
-    }
-
-    public List<T> findByNombre(String nombreBusqueda) {
+   
+     
+  /*  public List<T> findByNombre(String nombreBusqueda) {
         Session session = sessionFactory.openSession();
 
         Query query = session.createQuery("SELECT entidadbancaria FROM "+getEntityClass().getName()+" entidadbancaria WHERE nombre LIKE ?");
@@ -137,7 +124,7 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements GenericD
         //session.close();
 
         return list;
-    }
+    }*/
 
     private Class<T> getEntityClass() {
         return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];

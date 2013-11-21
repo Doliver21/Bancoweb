@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author alumno
  */
-public interface EntidadBancariaDAO extends GenericDAO<EntidadBancaria,Integer> {
+public interface EntidadBancariaDAO extends GenericDAO<EntidadBancaria,Integer>  {
      List findbycodigo(String codigo);
     
 }
