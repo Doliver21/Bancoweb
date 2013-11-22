@@ -26,7 +26,7 @@
         <h1>Vamos A ver los Datos para Actualizar</h1>
         
                 
-        <form METHOD="Get" ACTION="http://localhost:8084/BancoWeb/Update.jsp">
+        <form METHOD="Get" ACTION="http://localhost:8084/web1/Update.jsp">
             <input type="text" name="idEntidadBancaria"  readonly="readonly" value="<% out.print(entidadbancaria.getIdEntidadBancaria());%>"/>
             <input type="text" name="codigoEntidadBancaria" value="<% out.print(entidadbancaria.getCodigoEntidadBancaria());%>"/>
             <input type="text" name="nombre" value="<% out.print(entidadbancaria.getNombre());%>"/>

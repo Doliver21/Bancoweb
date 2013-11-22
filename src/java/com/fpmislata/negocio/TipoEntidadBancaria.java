@@ -9,7 +9,7 @@ package com.fpmislata.negocio;
  * @author alumno
  */
 public enum TipoEntidadBancaria {
- BANCO,
+BANCO,
 CAJADEAHORRO,
 COOPERATIVASDECREDITO,
 SUCURSAL,

@@ -1,3 +1,4 @@
+<%@page import="com.fpmislata.negocio.TipoEntidadBancaria"%>
 <%@page import="com.fpmislata.datos.EntidadBancariaDAOImpHibernate"%>
 <%@page import="com.fpmislata.datos.EntidadBancariaDAOImpJDBC"%>
 <%@page import="java.util.List"%>
@@ -36,7 +37,7 @@
                     <td><%  out.print(entidadBancaria.getCodigoEntidadBancaria());%></td>
                     <td><% out.print(entidadBancaria.getNombre());%></td>
                     <td><% out.print(entidadBancaria.getCif());%></td>    
-                    <td><% out.print(entidadBancaria.getTipoEntidadBancaria());%></td>
+                    <td><% out.print(entidadBancaria.getTipoEntidadBancaria().name());%></td>
 
                     <td><a href="Borrar.jsp?idEntidadBancaria=<%=entidadBancaria.getIdEntidadBancaria()%>">BORRAR</a>
                     </td>
@@ -73,5 +74,6 @@
         <br></br>
         <a href="ViewforInsert.jsp">Nuevo_JSP</a><br></br>
         <a href="Buscar.jsp">Buscar Por Nombre</a><br></br>
+     
     </body>
 </html>

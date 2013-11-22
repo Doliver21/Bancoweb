@@ -10,6 +10,10 @@ and open the template in the editor.
         <property name="codigoEntidadBancaria" />
         <property name="nombre" />
         <property name="cif" />
+        <property name="tipoEntidadBancaria" >
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">EntidadBancaria.TipoEntidadBancaria</param>
+                <param name="type">12</param>
     </class>
 </hibernate-mapping>
 

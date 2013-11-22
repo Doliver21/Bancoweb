@@ -95,7 +95,7 @@ public class EntidadBancaria {
         return tipoEntidadBancaria;
     }
 
-    public void setTEB(TipoEntidadBancaria tipoEntidadBancaria) {
+    public void setTipoEntidadBancaria(TipoEntidadBancaria tipoEntidadBancaria) {
         this.tipoEntidadBancaria = tipoEntidadBancaria;
     }
     

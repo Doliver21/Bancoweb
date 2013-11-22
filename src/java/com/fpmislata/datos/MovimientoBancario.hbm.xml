@@ -9,6 +9,7 @@
         <property name="fecha" />
         <property name="saldoTotal" />
         <property name="concepto" />
+        
     </class>
   
 </hibernate-mapping>
