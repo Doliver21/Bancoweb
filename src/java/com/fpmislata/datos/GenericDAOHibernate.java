@@ -30,7 +30,7 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements GenericD
             session.getTransaction().commit();
         } catch (Exception ex) {
             session.getTransaction().rollback();
-            throw new RuntimeException(ex);
+            throw new RuntimeException("",ex);
         } finally {
             if ((session != null) && (session.isConnected() == true)) {
                // session.close(); // Las sesiones no se cierran aqui, se cierran fuera !! Aqui solo con try/catch
@@ -71,7 +71,7 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements GenericD
             session.getTransaction().commit();
         } catch (Exception ex) {
             session.getTransaction().rollback();
-            throw new RuntimeException(ex);
+            throw new RuntimeException("",ex);
         } finally {
             if ((session != null) && (session.isConnected() == true)) {
                 //session.close();
@@ -93,7 +93,7 @@ public class GenericDAOHibernate<T, ID extends Serializable> implements GenericD
             session.getTransaction().commit();
         } catch (Exception ex) {
             session.getTransaction().rollback();
-            throw new RuntimeException(ex);
+            throw new RuntimeException("",ex);
         } finally {
             if ((session != null) && (session.isConnected() == true)) {
                 //session.close();
